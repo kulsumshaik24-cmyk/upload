@@ -1,152 +1,293 @@
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Resume</title>
         <style>
-            /* Overall page setup */
             body {
-                font-family: Arial, sans-serif;
-                color: #333333;
+                font-family: system-ui, -apple-system, sans-serif;
+                color: #2d3748;
                 line-height: 1.6;
-                margin: 40px;
+                max-width: 850px;
+                margin: 40px auto;
+                padding: 40px;
+                background-color: #ffffff;
+                border: 1px solid #e2e8f0;
+                border-top: 6px solid #0056b3;
+                border-radius: 8px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
             }
 
-            /* Name: Bold and Blue */
             h1 {
                 color: #0056b3;
                 font-weight: bold;
-                margin-bottom: 5px;
+                margin: 0 0 5px 0;
                 text-transform: uppercase;
+                letter-spacing: 0.5px;
             }
 
-            /* Subtitle */
             .subtitle {
                 font-size: 1.1rem;
-                color: #666666;
-                margin-top: 0;
-                margin-bottom: 15px;
+                color: #444444;
+                margin: 0 0 15px 0;
+                font-weight: bold;
             }
 
-            /* Contact details panel right below the name */
             .contact-panel {
                 font-size: 0.95rem;
-                background-color: #f8f9fa;
-                padding: 12px;
+                background-color: #f8fafc;
+                padding: 14px;
+                border: 1px solid #edf2f7;
                 border-left: 4px solid #0056b3;
                 margin-bottom: 25px;
+                border-radius: 0 6px 6px 0;
+                line-height: 1.8;
             }
 
-            /* Headings: Bold, Blue, and Uppercase */
+            .contact-panel strong {
+                color: #0056b3;
+            }
+
+            .profile-link {
+                color: #2d3748;
+                text-decoration: underline;
+                font-weight: bold;
+                transition: color 0.2s;
+            }
+
+            .profile-link:hover {
+                color: #0056b3;
+            }
+
             h3 {
                 color: #0056b3;
                 font-weight: bold;
-                border-bottom: 1px solid #dddddd;
-                padding-bottom: 5px;
-                margin-top: 25px;
-                margin-bottom: 12px;
+                border-bottom: 2.5px solid #0056b3;
+                padding-bottom: 6px;
+                margin: 28px 0 14px 0;
                 text-transform: uppercase;
                 font-size: 1.2rem;
+                letter-spacing: 0.5px;
             }
 
-            /*
-               Table Design with full borders like image_3b117f.png
-               but in clean, professional colors
-            */
             table {
                 width: 100%;
                 border-collapse: collapse;
-                margin-top: 15px;
-                margin-bottom: 15px;
-                border: 1px solid #333333; /* Dark outer border */
+                margin: 20px 0;
+                border-radius: 6px;
+                overflow: hidden;
+                border: 1px solid #e2e8f0;
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
             }
 
             th, td {
-                padding: 12px 10px;
-                text-align: center; /* Centered text layout */
-                border: 1px solid #333333; /* Full grid line borders around cells */
+                padding: 14px 18px;
+                text-align: left;
+                border-bottom: 1px solid #edf2f7;
+                border-right: 1px solid #edf2f7;
+                font-size: 0.95rem;
+            }
+
+            th:last-child, td:last-child {
+                border-right: none;
             }
 
             th {
-                background-color: #f2f2f2; /* Light grey for professional header background */
-                color: #111111;
-                font-weight: bold;
+                background-color: #0056b3;
+                color: #ffffff;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.8px;
+                border-right: 1px solid rgba(255, 255, 255, 0.15);
+            }
+
+            tr:nth-child(even) td {
+                background-color: #f8fafc;
+            }
+
+            tr:nth-child(odd) td {
+                background-color: #ffffff;
             }
 
             td {
-                background-color: #ffffff; /* Clean white background for data */
-                color: #333333;
+                font-weight: 500;
+            }
+
+            tr:hover td {
+                background-color: #f1f5f9 !important;
+            }
+
+            tr:last-child td {
+                border-bottom: none;
+            }
+
+            ul {
+                margin: 5px 0 15px 0;
+                padding-left: 22px;
+            }
+
+            li {
+                margin-bottom: 8px;
+                color: #222222;
+                font-weight: 500;
+            }
+
+            li::marker {
+                color: #0056b3;
             }
 
             p {
-                margin-bottom: 8px;
-                margin-top: 0;
+                margin: 0 0 8px 0;
+                color: #222222;
+                font-weight: 500;
+            }
+
+            .project-item {
+                margin-bottom: 20px;
+            }
+
+            .project-title {
+                font-size: 1.05rem;
+                font-weight: bold;
+                color: #2d3748;
+                margin-bottom: 4px;
+            }
+
+            .project-link {
+                color: #000000;
+                text-decoration: none;
+                font-weight: 700;
+                border-bottom: 2.5px solid #000000;
+                padding-bottom: 1px;
+                transition: all 0.2s;
+                letter-spacing: 0.3px;
+            }
+
+            .project-link:hover {
+                color: #333333;
+                border-bottom-color: #333333;
+                transform: translateY(-1px);
+            }
+
+            .motto-text {
+                font-style: italic;
+                font-weight: bold;
+                color: #111111;
+                font-size: 1.05rem;
+                background-color: #f8fafc;
+                padding: 16px;
+                border-radius: 6px;
+                border: 1px dashed #cbd5e1;
+                display: inline-block;
+                width: 100%;
+                box-sizing: border-box;
             }
         </style>
     </head>
     <body>
 
+        <!-- Header Section -->
         <h1>Shaik Kulsum</h1>
-        <p class="subtitle">B.Tech Student | Aspiring Developer</p>
-       
+        <p class="subtitle">Next-Gen Developer | AI & Intelligent Systems</p>
+        
         <div class="contact-panel">
             <strong>Email:</strong> badi.kulsum06@gmail.com |
-            <strong>Phone:</strong> +91 98765 43210 |
-            <strong>Location:</strong> Andhra Pradesh, India
+            <strong>Phone:</strong> +91 90141 67179 |
+            <strong>Location:</strong> Andhra Pradesh, India |
+            <strong>CodeChef:</strong> <a href="https://www.codechef.com/users/bask_moles_15" target="_blank" class="profile-link">codechef.com/users/bask_moles_15</a>
         </div>
 
+        <!-- About Me Section -->
         <h3>About Me</h3>
-        <p>I am 3rd year B.Tech student in Computer Science and Engineering(Artificial Intelligence and Machine Learning). I have hand on experience of workshops and hackthon.Strong foundation in C, Python, Java, DSA, and DBMS.I have been eager to apply my skills in real time and also to learn new things which can help me improving my skills.</p>
-       
+        <p>I am a 3rd year B.Tech student in Computer Science and Engineering (Artificial Intelligence and Machine Learning). I have hands-on experience in workshops and hackathons with a strong foundation in C, Python, Java, DSA, and DBMS. I am eager to apply my skills in real-time environments and consistently learn new things to enhance my technical expertise.</p>
+        
+        <!-- Skills Section -->
+        <h3>Skills</h3>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>Basic JavaScript</li>
+            <li>Python</li>
+            <li>SQL</li>
+            <li>C Programming</li>
+            <li>Basic Java</li>
+        </ul>
+        
+        <!-- Experience Section -->
+        <h3>Experience</h3>
+        <ul>
+            <li>Attended an AWS Workshop.</li>
+            <li>Participated in a Google Hackathon as a Team Leader, managing a team to successfully build and submit a functional prototype named <strong>Smart Resource Management System</strong>.</li>
+            <li>Completed an internship in Artificial Intelligence at Convergences.</li>
+        </ul>
+        
+        <!-- Strengths Section -->
+        <h3>Strengths</h3>
+        <ul>
+            <li>Fast Learner with Strong Adaptability.</li>
+            <li>Excellent Time Management Skills.</li>
+            <li>Good Communication Skills.</li>
+            <li>Collaborative Team Player with proven leadership capabilities.</li>
+        </ul>
+         
+        <!-- Certifications Section -->
+        <h3>Certifications</h3>
+        <ul>
+            <li>AWS Workshop Certificate</li>
+            <li>Cambridge English Spoken Skills Certificate</li>
+            <li>Internship Completion Certificate from Convergences</li>
+            <li>Professional Technical Certifications in C and Python Programming</li>
+        </ul> 
+         
+        <!-- Education Section -->
         <h3>Education</h3>
         <table>
             <tr>
                 <th>Class</th>
-                <th>School/college Name</th>
+                <th>Institution</th>
                 <th>Percentage</th>
             </tr>
             <tr>
                 <td>10th</td>
                 <td>Sasi E.M High School</td>
-                <td>90.3</td>
+                <td>90.3%</td>
             </tr>
             <tr>
-                <td>Intermidate</td>
-                <td>Sasi Intermidate college</td>
-                <td>96</td>
+                <td>Intermediate</td>
+                <td>Sasi Intermediate college</td>
+                <td>96%</td>
             </tr>
             <tr>
                 <td>B.Tech</td>
-                <td>Sasi Institute of Technology and Enginerring</td>
-                <td>86</td>
+                <td>Sasi Institute of Technology and Engineering</td>
+                <td>86%</td>
             </tr>
         </table>
 
-        <h3>Skills</h3>
-        <p>I have experince in python, html, sql, and problem solving.</p>
-        <p>I have strong bascis in c, DSA, and java. </p>
-        <p>I learn new things fastly.</p>
-        <p>I can manage my time effectively.</p>
+        <!-- Languages Section -->
+        <h3>Languages</h3>
+        <p>English, Telugu, Hindi</p>
        
-        <h3>Experince</h3>
-        <p>I had attended an AWS workshop. </p>
-        <p>I have particpated in google hackthon.</p>
-        <p>I had completed an intership on Aritifical Intellgince</p>
-       
-        <h3>Strengths</h3>
-        <p>I learn and adapt to new concepts easily.</p>
-        <p>Time mangment skils.</p>
-        <p>Good Communication Skills.</p>
-       
-        <h3>Certification</h3>
-        <p>AWS workshop.</p>
-        <p>Cambrigdge for spoken skills.</p>
-        <p>Internship completion Certificate from convergences</p>
-       
-        <h3>Project</h3>
-        <a href="https://topicreactorreact.vercel.app/">project</a>
+        <!-- Projects Section -->
+        <h3>Projects</h3>
+        <div class="project-item">
+            <div class="project-title"><a href="https://kulsumshaik24-cmyk.github.io/volunteer-connect-prototype/" target="_blank" class="project-link">Smart Resource Management System</a></div>
+            <p>A data-driven platform matching operational resources to community needs via a Flask backend and SQLite. It features real-time matching, a dynamic dashboard for tracking allocations, and 100% visibility of all active staff. Optimized for operations to ensure skills reach the right place efficiently.</p>
+        </div>
 
-        
-        
+        <div class="project-item">
+            <div class="project-title">Movie Recommendation System</div>
+            <p>Developed an intelligent machine learning system designed to parse user preferences and watch histories to suggest highly tailored cinematographic choices. Built and optimized during my AI internship at Convergences using custom algorithmic logic to enhance predictive accuracy.</p>
+        </div>
+
+        <div class="project-item">
+            <div class="project-title">AI Chatbot</div>
+            <p>Engineered an adaptive, conversational artificial intelligence entity using advanced natural language processing. Engineered and deployed during my internship framework at Convergences to provide instant automated interactions and seamless context tracking.</p>
+        </div>
+
+        <!-- Motto Section -->
+        <h3>Motto</h3>
+        <p class="motto-text">"Leveraging AI/ML foundations to bridge intelligence with implementation and build innovative digital systems."</p>
 
     </body>
 </html>
